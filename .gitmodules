@@ -1,0 +1,3 @@
+[submodule "libs"]
+	path = libs
+	url = https://vladiiancu@github.com/serbanghita/Mobile-Detect
