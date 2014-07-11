@@ -4,16 +4,18 @@
 	Version: 1.0.0
 	Plugin URI: to-be-announced
 	Description: Mobile detect functions and shortcodes
-	Author: SiteUP.ro
-	Author URI: http://www.siteup.ro
-	License: GPL v3
+	Author: SiteUP&trade;
+	Author URI: http://www.siteup.org.uk
+	License: GPL v2
+	GitHub Plugin URI: https://github.com/siteup/wp-device-detect
+	GitHub Branch:     master
 
 	WP Mobile Detect
 	Copyright (C) 2014, Petrisor Buga & Vladi Iancu http://www.siteup.ro
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
+	the Free Software Foundation, either version 2 of the License, or
 	(at your option) any later version.
 
 	This program is distributed in the hope that it will be useful,
