@@ -11,7 +11,16 @@ This plugin is based on the excelent library: https://github.com/serbanghita/Mob
 
 After activating the plugin, you can use the following shortcodes:
 
-- ` [phone]Content here...[/phone] ` - this will display the content on phone ONLY;
-- ` [tablet]Content for tablet...[/tablet] ` - the content will be displayed only on TABLETS;
-- ` [desktop]Content for desktop...[/desktop] `- display content on the desktop only, hidding it on phones and tablets;
+- ` [stp_phone]Content here...[/stp_phone] ` - this will display the content on phone ONLY;
+- ` [stp_tablet]Content for tablet...[/stp_tablet] ` - the content will be displayed only on TABLETS;
+- ` [stp_desktop]Content for desktop...[/stp_desktop] `- display content on the desktop only, hidding it on phones and tablets;
+- ` [stp_mobile] Content for phones and tablets alike [/stp_mobile] ` - displays the content for everybody except desktop users;
  
+### FOR WordPress programmers
+
+The following function are available to be used in plugins or theme:
+
+- ` stp_phone() ` returns true if the users are using a phone to view the content, while ` stp_notphone() ` returns true if the user is NOT using a phone to view the content;
+- ` stp_tablet() ` returns true if the users are using a tablet to view the content.  Vice-versa `stp_nottablet()`;
+- ` stp_desktop() ` returns true for desktop users. You get it by now. Aliases: `stp_notdevice()` and `stp_notmobile()`;
+- ` stp_mobile() ` returns true for phone and tablet users. 
