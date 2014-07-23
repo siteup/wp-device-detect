@@ -63,7 +63,7 @@ class SS_DeviceDetector{
 			deactivate_plugins( plugin_basename( __FILE__ ));
 
 			if (!get_option('wp_mobcodes_activate') ){
-				$notices['deactivated'] 	= "SS Device Detector was deactivated to prevent a conflict!";
+				$notices['deactivated'] 	= "SS Device Detector was deactivated to prevent a conflict with another plugin!";
 				update_option('wp_mobcodes_deferred_admin_notices', $notices);
 				delete_option('wp_mobcodes_activate');
 
@@ -76,9 +76,8 @@ class SS_DeviceDetector{
 	}
 
     function wp_mobcodes_deactivation() {
-	 	//delete_option('wp_mobcodes_version'); 
-	  	//delete_option('wp_mobcodes_deferred_admin_notices'); 
-	}
+    	#no deavtivation options
+    }
 }
 
 	
@@ -88,7 +87,7 @@ class SS_DeviceDetector{
 	add_action('admin_notices', array('SS_DeviceDetector','wp_mobcodes_admin_notices'));
 	register_deactivation_hook(__FILE__, array('SS_DeviceDetector','wp_mobcodes_deactivation'));
 
-	include_once('Mobile_Detect.php');
+	include_once('MobileDetect.php');
 	$md = new MobileDetect();
 
 	# display on phone
