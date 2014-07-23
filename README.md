@@ -5,7 +5,9 @@ A WordPress plugin that detects the device used by visitors and provides functio
 
 This plugin is based on the excelent library: https://github.com/serbanghita/Mobile-Detect/
 
-### USAGE
+## USAGE
+
+### FOR WordPress users
 
 After activating the plugin, you can use the following shortcodes:
 
