@@ -1,16 +1,16 @@
 <?php 
 	/*
-	Plugin Name: WP MobCodes
+	Plugin Name: SS Device Detector
 	Version: 1.0.0
-	Plugin URI: to-be-announced
-	Description: Mobile detect functions and shortcodes
+	Plugin URI: http://www.siteup.org.uk/downloads/ss-device-detector-wp-plugin/
+	Description: Server-side solution to detect mobile, tablet and desktop devices. Creates functions and shortcodes
 	Author: SiteUP&trade;
 	Author URI: http://www.siteup.org.uk
 	License: GPL v2
 	GitHub Plugin URI: https://github.com/siteup/wp-device-detect
 	GitHub Branch:     master
 
-	WP Mobile Detect
+	SS Device Detector
 	Copyright (C) 2014, Petrisor Buga & Vladi Iancu http://www.siteup.ro
 
 	This program is free software: you can redistribute it and/or modify
