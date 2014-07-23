@@ -28,9 +28,68 @@
 	*/
 
 
-	// PHP Mobile Detect class used to detect browser or device type
+class MobCodes{
+
+	public $exists = false;
+
+	function __construct() {  
+		
+    }
+
+    function wp_mobcodes_admin_notices() {
+	  	delete_option('wp_mobcodes_activate');
+
+	  	if ($notices= get_option('wp_mobcodes_deferred_admin_notices')) {
+	    	foreach ($notices as $notice) 
+	    	  	echo "<div class='error'><p>$notice</p></div>";
+
+	    	delete_option('wp_mobcodes_deferred_admin_notices');
+	  	}
+	}
+
+    function wp_mobcodes_activation() {
+    	$notices = get_option('wp_mobcodes_deferred_admin_notices', array());
+    	
+    	if (class_exists('Mobile_Detect') )
+    		$notices['conflict'] = "Error: Plugin conflict! Please deactivate XXX and activate ours, it's better :D!";
+
+    	update_option('wp_mobcodes_activate',class_exists('Mobile_Detect'));
+	 	update_option('wp_mobcodes_deferred_admin_notices', $notices);
+	}
+
+	function wp_mobcodes_admin_init() {
+
+		if (class_exists('Mobile_Detect') && is_plugin_active( plugin_basename( __FILE__ ))) { 
+			deactivate_plugins( plugin_basename( __FILE__ ));
+
+			if (!get_option('wp_mobcodes_activate') ){
+				$notices['deactivated'] 	= "MobCodes was deactivated to prevent a conflict!";
+				update_option('wp_mobcodes_deferred_admin_notices', $notices);
+				delete_option('wp_mobcodes_activate');
+
+				if (isset(self::$exists))
+					self::$exists = true;
+			}
+			
+			if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+		} 
+	}
+
+    function wp_mobcodes_deactivation() {
+	 	//delete_option('wp_mobcodes_version'); 
+	  	//delete_option('wp_mobcodes_deferred_admin_notices'); 
+	}
+}
+
+	
+
+	register_activation_hook(__FILE__, array('MobCodes','wp_mobcodes_activation'));
+	add_action('admin_init', array('MobCodes','wp_mobcodes_admin_init'));
+	add_action('admin_notices', array('MobCodes','wp_mobcodes_admin_notices'));
+	register_deactivation_hook(__FILE__, array('MobCodes','wp_mobcodes_deactivation'));
+
 	include_once('Mobile_Detect.php');
-	$md = new Mobile_Detect();
+	$md = new MobileDetect();
 
 	# display on phone
 	$phone = function($atts = array(), $content = "") use ($md) {

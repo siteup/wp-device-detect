@@ -23,7 +23,7 @@
  * @version     2.8.3
  */
 
-class Mobile_Detect
+class MobileDetect
 {
     /**
      * Mobile detection type.
