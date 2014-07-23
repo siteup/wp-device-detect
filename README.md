@@ -16,7 +16,7 @@ After activating the plugin, you can use the following shortcodes:
 - ` [stp_desktop]Content for desktop...[/stp_desktop] `- display content on the desktop only, hidding it on phones and tablets;
 - ` [stp_mobile] Content for phones and tablets alike [/stp_mobile] ` - displays the content for everybody except desktop users;
  
-### FOR WordPress programmers
+### FOR WordPress developers
 
 The following function are available to be used in plugins or theme:
 
