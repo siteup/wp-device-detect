@@ -1,5 +1,5 @@
 === SS Device Detector ===
-Contributors: vladiiancu peterbuga
+Contributors: vladiiancu, peterbuga
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=vladi%2eiancu%40gmail%2ecom&lc=RO&item_name=WordPress%20Plugin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: responsive, shortcode, content, adaptive, RESS
 Requires at least: 3.0.1
