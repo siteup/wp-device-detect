@@ -91,59 +91,65 @@ class SS_DeviceDetector{
 	$md = new MobileDetect();
 
 	# display on phone
-	$phone = function($atts = array(), $content = "") use ($md) {
+	function phone_detect($atts = array(), $content = ""){
+		global $md;
 		return ($md->isMobile() && !$md->isTablet) ? (!func_num_args() ? true : do_shortcode($content)) : (!func_num_args() ? false : null); 
 	};
-	function stp_isPhone(){ global $phone; return $phone(); }
-	add_shortcode('stp_phone', $phone );
+	function stp_phone(){ return phone_detect(); }
+	add_shortcode('stp_phone', 'phone_detect' );
 
 
 	# display on tablet devices
-	$tablet = function($atts, $content="") use ($md) {
+	function tablet_detect($atts, $content=""){
+		global $md;
 		return $md->isTablet() ? 
 				(!func_num_args() ? true : do_shortcode($content)) : 
 				(!func_num_args() ? false : null); 
 	};
-	function stp_isTablet(){ global $tablet; return $tablet(); }
-	add_shortcode('stp_tablet', $tablet);
+	function stp_tablet(){ return tablet_detect(); }
+	add_shortcode('stp_tablet', 'tablet_detect');
 
 	# display on phone+tablets
-	$mobile = function($atts, $content="") use ($md) {
+	function mobile_detect($atts, $content=""){
+		global $md;
 		return ($md->isMobile() || $md->isTablet()) ? 
 				(!func_num_args() ? true : do_shortcode($content)) : 
 				(!func_num_args() ? false : null);
 	};
-	function stp_isMobile(){ global $mobile; return $mobile(); }
-	add_shortcode('stp_mobile', $mobile);
-	add_shortcode('stp_device', $mobile);
+	function stp_mobile(){ return mobile_detect(); }
+	add_shortcode('stp_mobile', 'mobile_detect');
+	add_shortcode('stp_device', 'mobile_detect');
 
 	# display only on desktop
-	$desktop = function($atts, $content="") use ($md){
+	function desktop_detect($atts, $content=""){
+		global $md;
 		return (!$md->isMobile() && !$md->isTablet) ? 
 				(!func_num_args() ? true : do_shortcode($content)) : 
 				(!func_num_args() ? false : null);
 	};
-	function stp_isDesktop(){ global $desktop; return $desktop(); }
-	function stp_isNotDevice(){ return stp_isDesktop(); }
-	function stp_isNotMobile(){ return stp_isDesktop(); }
-	add_shortcode('stp_desktop', $desktop);
-	add_shortcode('stp_notdevice', $desktop); //alias
-	add_shortcode('stp_notmobile', $desktop); //alias
+	function stp_desktop(){ return desktop_detect(); }
+	function stp_notDevice(){ return stp_isDesktop(); }
+	function stp_notMobile(){ return stp_isDesktop(); }
+	add_shortcode('stp_desktop', 'desktop_detect');
+	add_shortcode('stp_notdevice', 'desktop_detect'); //alias
+	add_shortcode('stp_notmobile', 'desktop_detect'); //alias
 
 	# only on desktop + tablet
-	$notphone = function($atts, $content="") use ($md) {
+	function notphone_detect($atts, $content=""){
+		global $md;
 		return (!$md->isMobile() || $md->isTablet()) ? 
 				(!func_num_args() ? true : do_shortcode($content)) : 
 				(!func_num_args() ? false : null);
 	};
-	function stp_isNotPhone(){ global $notphone; return $notphone(); }
-	add_shortcode('stp_notphone',$notphone);
+	function stp_notPhone(){ return notphone_detect(); }
+	add_shortcode('stp_notphone','notphone_detect');
 
 	# phone + desktop
-	$nottablet = function($atts, $content="") use ($md) {
+	function nottablet_detect($atts, $content=""){
+		global $md;
 		return !$md->isTablet() ? 
 				(!func_num_args() ? true : do_shortcode($content)) : 
 				(!func_num_args() ? false : null);
 	};
-	function stp_isNotTablet(){ global $nottablet; return $nottablet(); }
-	add_shortcode('stp_nottablet',$nottablet);
+	function stp_notTablet(){ return nottablet_detect(); }
+	add_shortcode('stp_nottablet','nottablet_detect');
