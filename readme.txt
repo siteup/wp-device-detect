@@ -2,9 +2,9 @@
 Contributors: vladiiancu, peterbuga
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=vladi%2eiancu%40gmail%2ecom&lc=RO&item_name=WordPress%20Plugin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: responsive, shortcode, content, adaptive, RESS
-Requires at least: 3.0.1
+Requires at least: 3.2
 Tested up to: 3.9
-Stable tag: 1.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,12 @@ You can use:
 
 
 == Changelog ==
+
+= 1.0.2 = 
+* Rewritten to add support for PHP 5.2+
+
+= 1.0.1 =
+* Compatibility checks.
 
 = 1.0 =
 * Initial version.
