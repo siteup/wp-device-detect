@@ -1,7 +1,7 @@
 <?php 
 	/*
 	Plugin Name: SS Device Detector
-	Version: 1.0.0
+	Version: 1.0.2
 	Plugin URI: http://www.siteup.org.uk/downloads/ss-device-detector-wp-plugin/
 	Description: Server-side solution to detect mobile, tablet and desktop devices. Creates functions and shortcodes
 	Author: SiteUP&trade;
